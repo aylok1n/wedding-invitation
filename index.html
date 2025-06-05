@@ -26,36 +26,7 @@
   <link href="./src/cabinet.css" rel="stylesheet">
   <link href="./src/userinvent.css" rel="stylesheet">
   <script src="https://api-maps.yandex.ru/v3/?apikey=15123f89-2a38-4f7f-9f6e-3abb28a90020&lang=ru_RU"></script>
-  <script>
-    initMap();
 
-    async function initMap() {
-      // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-      await ymaps3.ready;
-
-      const { YMap, YMapDefaultSchemeLayer } = ymaps3;
-
-      // Иницилиазируем карту
-      const map = new YMap(
-        // Передаём ссылку на HTMLElement контейнера
-        document.getElementById('map'),
-
-        // Передаём параметры инициализации карты
-        {
-          location: {
-            // Координаты центра карты
-            center: [53.222237, 56.84819],
-
-            // Уровень масштабирования
-            zoom: 10
-          }
-        }
-      );
-
-      // Добавляем слой для отображения схематической карты
-      map.addChild(new YMapDefaultSchemeLayer());
-    }
-  </script>
 </head>
 
 <body>
@@ -400,13 +371,42 @@
       const intervalId = setInterval(updateCountdown, 1000); // Save interval ID to stop it later
     });
   </script>
-  <script src="./src/jquery.min.js."></script>
+  <script src="./src/jquery.min.js"></script>
   <script crossorigin="anonymous" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-    src="./src/bootstrap.min.js."></script>
-  <script src="./src/userinvent.js."></script>
-  <script src="./src/userlib.min.js."></script>
-  <script crossorigin="anonymous" src="./src/twemoji.min.js."></script>
+    src="./src/bootstrap.min.js"></script>
+  <script src="./src/userinvent.js"></script>
+  <script src="./src/userlib.min.js"></script>
+  <script crossorigin="anonymous" src="./src/twemoji.min.js"></script>
+  <script>
+    initMap();
 
+    async function initMap() {
+      // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+      await ymaps3.ready;
+
+      const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+
+      // Иницилиазируем карту
+      const map = new YMap(
+        // Передаём ссылку на HTMLElement контейнера
+        document.getElementById('map'),
+
+        // Передаём параметры инициализации карты
+        {
+          location: {
+            // Координаты центра карты
+            center: [53.222237, 56.84819],
+
+            // Уровень масштабирования
+            zoom: 10
+          }
+        }
+      );
+
+      // Добавляем слой для отображения схематической карты
+      map.addChild(new YMapDefaultSchemeLayer());
+    }
+  </script>
 </body>
 
 </html>
