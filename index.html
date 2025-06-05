@@ -20,12 +20,42 @@
   <!-- <meta content="http://weddingpost.ru/template/invent/screenshot/911266.png" property="og:image" /> -->
 
 
-  <link crossorigin="anonymous"
-    href="./src/bootstrap.min.css"
+  <link crossorigin="anonymous" href="./src/bootstrap.min.css"
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet">
   <!--Custom styles for this template-->
   <link href="./src/cabinet.css" rel="stylesheet">
   <link href="./src/userinvent.css" rel="stylesheet">
+  <script src="https://api-maps.yandex.ru/v3/?apikey=15123f89-2a38-4f7f-9f6e-3abb28a90020&lang=ru_RU"></script>
+  <script>
+    initMap();
+
+    async function initMap() {
+      // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+      await ymaps3.ready;
+
+      const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+
+      // Иницилиазируем карту
+      const map = new YMap(
+        // Передаём ссылку на HTMLElement контейнера
+        document.getElementById('map'),
+
+        // Передаём параметры инициализации карты
+        {
+          location: {
+            // Координаты центра карты
+            center: [53.222237, 56.84819],
+
+            // Уровень масштабирования
+            zoom: 10
+          }
+        }
+      );
+
+      // Добавляем слой для отображения схематической карты
+      map.addChild(new YMapDefaultSchemeLayer());
+    }
+  </script>
 </head>
 
 <body>
@@ -139,7 +169,7 @@
               background-image: url('src/background.png');
               background-size: 428px;
             ">
-          <div class="element8" elemplace="bgbacktext" style="background: rgb(233 216 204 / 58%)">
+          <div class="element8" elemplace="bgbacktext" style="background: rgba(235, 226, 219, 0.836)">
             <div class="element5 textBox" textplace="back_text">
               <div class="moveBox" style="left: 0%; top: -13%">
                 <div class="textLine" action="text1" style="
@@ -169,7 +199,7 @@
                         border-radius: 200px;
                         background: rgba(255, 255, 255, 0.8);
                         padding: 0%;
-                      " src="./src/bbbc31_20250506142808.jpg" />
+                      " src="./src/main.jpg" />
                 </div>
               </div>
               <div style="top: 0%; left: 0%" type="text" class="moveBox">
@@ -197,48 +227,6 @@
                       color: rgb(68, 99, 69);
                     " class="textLine" action="text5">
                   Там, где посеяна любовь, растёт радость.
-                </div>
-              </div>
-              <div style="top: 0%" type="img" class="moveBox">
-                <div style="float: left; margin-left: 50px; margin-right: 50px" class="textLine" action="text8">
-                  <img class="BGPlace" width="100%" style="
-                        border-radius: 200px;
-                        background: rgba(255, 255, 255, 0.8);
-                        padding: 2%;
-                      " src="./src/ed8b56_20250506142457.jpg" />
-                </div>
-              </div>
-              <div style="top: 0%; left: 0%" type="text" class="moveBox">
-                <div spellcheck="false" style="
-                      font-size: 18.8419pt;
-                      line-height: 1.25em;
-                      letter-spacing: 0em;
-                      text-align: center;
-                      font-family: LeJardin;
-                      color: rgb(68, 99, 69);
-                    " class="textLine" action="text10">
-                  Николай
-                </div>
-              </div>
-              <div style="top: 0%" type="img" class="moveBox">
-                <div style="float: left; margin-left: 50px; margin-right: 50px" class="textLine" action="text9">
-                  <img class="BGPlace" width="100%" style="
-                        border-radius: 200px;
-                        background: rgba(255, 255, 255, 0.8);
-                        padding: 2%;
-                      " src="./src/afeabd_20250506142410.jpg" />
-                </div>
-              </div>
-              <div style="top: 0%; left: 0%" type="text" class="moveBox">
-                <div spellcheck="false" style="
-                      font-size: 18.8419pt;
-                      line-height: 1.25em;
-                      letter-spacing: 0em;
-                      text-align: center;
-                      font-family: LeJardin;
-                      color: rgb(68, 99, 69);
-                    " class="textLine" action="text11">
-                  Грета
                 </div>
               </div>
               <div id="palitra" module="palitra">
@@ -357,6 +345,7 @@
                   Пожалуйста подтвердите свое присутствие до 18.07.2025
                 </div>
               </div>
+              <div id="map" style="width: 600px; height: 400px"></div>
               <div style="top: 0%; left: 0%" type="text" class="moveBox">
                 <div spellcheck="false" style="
                       font-size: 16pt;
@@ -416,8 +405,7 @@
     src="./src/bootstrap.min.js."></script>
   <script src="./src/userinvent.js."></script>
   <script src="./src/userlib.min.js."></script>
-  <script crossorigin="anonymous"
-    src="./src/twemoji.min.js."></script>
+  <script crossorigin="anonymous" src="./src/twemoji.min.js."></script>
 
 </body>
 
