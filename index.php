@@ -10,8 +10,7 @@
   <meta property="og:title" content="Приглашение на свадьбу - Николай &amp; Грета (18.07.2025)" />
   <meta property="og:description" content="Жених и Невеста приглашают вас на свадьбу. Ваше приглашение:" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="http://weddingpost.ru/template/invent/screenshot/911266.png" />
-  <link rel="shortcut icon" href="https://weddingpost.ru/favicon.ico" />
+  <meta property="og:image" content="http://xn-----18-07-2025-v1kabbsro2aq9dzd2a1a9b2a4b2d4hyf.xn--p1ai/src/main.jpg" />
   <title>Приглашение на свадьбу</title>
   <!--Bootstrap core CSS-->
   <meta content="Приглашение на свадьбу - Николай &amp; Грета (18.07.2025)" property="og:title" />
